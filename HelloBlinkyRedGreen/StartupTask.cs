@@ -32,17 +32,22 @@ namespace HelloBlinkyRedGreen
             init();
             while (true)
             {
-                GpioPinValue pinValue = pinGreen.Read();
-                if (pinValue == GpioPinValue.High)
-                {
-                    pinGreen.Write(GpioPinValue.Low);
-                    pinRed.Write(GpioPinValue.High);
-                }
-                else
-                {
-                    pinGreen.Write(GpioPinValue.High);
-                    pinRed.Write(GpioPinValue.Low);
-                }
+                GpioPinValue greenPinValue = (pinGreen.Read() == GpioPinValue.High) ? GpioPinValue.Low : GpioPinValue.High;
+                GpioPinValue redPinValue = (pinGreen.Read() == GpioPinValue.High) ? GpioPinValue.High : GpioPinValue.Low;
+                pinGreen.Write(greenPinValue);
+                pinRed.Write(redPinValue);
+
+                //GpioPinValue pinValue = pinGreen.Read();
+                //if (pinValue == GpioPinValue.High)
+                //{
+                //    pinGreen.Write(GpioPinValue.Low);
+                //    pinRed.Write(GpioPinValue.High);
+                //}
+                //else
+                //{
+                //    pinGreen.Write(GpioPinValue.High);
+                //    pinRed.Write(GpioPinValue.Low);
+                //}
                 Task.Delay(1000).Wait();
             }
         }

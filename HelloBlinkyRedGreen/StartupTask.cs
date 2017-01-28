@@ -2,8 +2,6 @@
 using Windows.Devices.Gpio;
 using System.Threading.Tasks;
 
-// The Background Application template is documented at http://go.microsoft.com/fwlink/?LinkID=533884&clcid=0x409
-
 namespace HelloBlinkyRedGreen
 {
     public sealed class StartupTask : IBackgroundTask
@@ -32,10 +30,10 @@ namespace HelloBlinkyRedGreen
             init();
             while (true)
             {
-                GpioPinValue greenPinValue = (pinGreen.Read() == GpioPinValue.High) ? GpioPinValue.Low : GpioPinValue.High;
-                GpioPinValue redPinValue = (pinGreen.Read() == GpioPinValue.High) ? GpioPinValue.High : GpioPinValue.Low;
-                pinGreen.Write(greenPinValue);
-                pinRed.Write(redPinValue);
+                GpioPinValue pinValue = (pinGreen.Read() == GpioPinValue.High) ? GpioPinValue.Low : GpioPinValue.High;
+                GpioPinValue pinValueRev = (pinValue == GpioPinValue.High) ? GpioPinValue.Low : GpioPinValue.High;
+                pinGreen.Write(pinValue);
+                pinRed.Write(pinValueRev);
 
                 //GpioPinValue pinValue = pinGreen.Read();
                 //if (pinValue == GpioPinValue.High)

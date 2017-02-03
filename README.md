@@ -1,2 +1,2 @@
-# Lesson2-HelloBlinkyRedGreen
-Windows 10 IoT Core, Raspberry PI, onboard red-green led's are flashing.
+# Lesson2-Hello Blinky Red and Green
+This project is using Raspberry PI, Windows 10 IoT Core and putting onboard red-green LEDs blinking.

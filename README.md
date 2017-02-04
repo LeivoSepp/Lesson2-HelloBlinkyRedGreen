@@ -72,15 +72,16 @@ Now we are ready to start alternatevly blink red and green LEDs
 while(true) tells to code, that "run forewer everything which inside of me".
 
 # #1 Method to blink LEDs, using IF-ELSE statement
-a) check green LED status, is it on or off?
-b) if green LED is ON (GpioPinValue.High)
-	b1) turn green LED OFF
-	b2) turn red LED ON
-c) jump over else and wait 1 second (1000 ms)
-d) start again checking green LED statuses
-e) now green LED is OFF, so code will jump to ELSE
-	e1) turn green LED ON
-	e2) turn red LED OFF
+
+1. check green LED status, is it on or off?
+2. if green LED is ON (GpioPinValue.High)
+	1. turn green LED OFF
+	2. turn red LED ON
+3. jump over else and wait 1 second (1000 ms)
+4. start again checking green LED statuses
+5. now green LED is OFF, so code will jump to ELSE
+	1. turn green LED ON
+	2. turn red LED OFF
 
 Code wait again 1 second and jumps to start.
 ```c#
@@ -105,15 +106,15 @@ Code wait again 1 second and jumps to start.
 First, we need to understand how ternary condition is working. Actually it is like IF-ELSE statement, but all in one line and using ? for IF and : for ELSE
 Lets go step-by-step
 
-a) creating variable to hold pin statuses (on or off) GpioPinValue pinValue
-	a1) check green LED statuses (pinGreen.Read() == GpioPinValue.High)
-	a2) if green LED is ON, then our variable pinValue will get a value GpioPinValue.Low 
-b) creating another variable to hold pin statuses (on or off) GpioPinValue pinValueRev
-	b1) check pinValue statuses (pinValue == GpioPinValue.High)
-	b2) if pinValue is LOW, then pinValueRev get a value GpioPinValue.High
-c) turn green LED on or off, based pinValue pinGreen.Write(pinValue);
-d) turn red LED on or off, based on pinValueRev pinRed.Write(pinValueRev);
-e) wait 1 second and start again
+1. creating variable to hold pin statuses (on or off) GpioPinValue pinValue
+	1. check green LED statuses (pinGreen.Read() == GpioPinValue.High)
+	2. if green LED is ON, then our variable pinValue will get a value GpioPinValue.Low 
+2. creating another variable to hold pin statuses (on or off) GpioPinValue pinValueRev
+	1. check pinValue statuses (pinValue == GpioPinValue.High)
+	2. if pinValue is LOW, then pinValueRev get a value GpioPinValue.High
+3. turn green LED on or off, based pinValue pinGreen.Write(pinValue);
+4. turn red LED on or off, based on pinValueRev pinRed.Write(pinValueRev);
+5. wait 1 second and start again
 
 ```c#
             while (true)
@@ -129,12 +130,13 @@ e) wait 1 second and start again
 # #3 Method to blink LEDs, using plain code
 
 This method could be most easy to understand, but developers like it least.
-a) set green LED OFF
-b) set red LED ON
-c) wait 1 second
-a) set green LED ON
-b) set red LED OFF
-c) wait 1 second
+
+1. set green LED OFF
+2. set red LED ON
+3. wait 1 second
+4. set green LED ON
+5. set red LED OFF
+6. wait 1 second
 
 ```c#
             while (true)
@@ -150,6 +152,8 @@ c) wait 1 second
 
 # Which is the best method to use?
 It is always tricky question :)
+
 Which method to use, is depending on you and what is your coding level. If you are beginner, then most probably you will use method 3, if you have already some knowledge, you probably will use method 1. 
 Many skilled programmers would prefer method 2.
+
 I can say that there are other techniques exists as well, for example use methods, but we will keep it plain and simple at the moment.

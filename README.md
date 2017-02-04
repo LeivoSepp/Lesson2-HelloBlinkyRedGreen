@@ -1,7 +1,7 @@
 # Lesson2-Hello Blinky Red and Green
 This project is using Raspberry PI, Windows 10 IoT Core and putting onboard red-green LEDs blinking.
 
-```c#
+```html
 <pre style="font-family:Consolas;font-size:13;color:black;background:white;"><span style="color:blue;">namespace</span>&nbsp;HelloBlinkyRedGreen
 {
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue;">public</span>&nbsp;<span style="color:blue;">sealed</span>&nbsp;<span style="color:blue;">class</span>&nbsp;<span style="color:#2b91af;">StartupTask</span>&nbsp;:&nbsp;<span style="color:#2b91af;">IBackgroundTask</span>

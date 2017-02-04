@@ -1,9 +1,8 @@
-# Lesson2 Hello Blinky Red and Green
+# Lesson #2 Hello Blinky Red and Green
 This project uses Raspberry PI, Windows 10 IoT Core and the onboard red-green LEDs which will be blinking alternatingly.
 
-Lesson #1 in this series: https://github.com/LeivoSepp/Lesson1-HelloBlinky
-
-Lesson #3 in this series: https://github.com/LeivoSepp/Lesson3-HelloButton
+* Lesson #1 in this series: https://github.com/LeivoSepp/Lesson1-HelloBlinky
+* Lesson #3 in this series: https://github.com/LeivoSepp/Lesson3-HelloButton
 
 ## Why use this program?
 

@@ -1,4 +1,4 @@
-# Lesson2-Hello Blinky Red and Green
+# Lesson2 Hello Blinky Red and Green
 This project is using Raspberry PI, Windows 10 IoT Core and onboard red-green LEDs which are going to blink alternately.
 
 # Why is it worth to try this program?
@@ -65,7 +65,7 @@ The first row is init(); that is our previously created code-block for setting u
 Now we are ready to start alternatevly blink red and green LEDs
 while(true) tells to code, that "run forewer everything which inside of me".
 
-# 1 Method to blink LEDs, using IF-ELSE statement
+# #1 Method to blink LEDs, using IF-ELSE statement
 a) check green LED status, is it on or off?
 b) if green LED is ON (GpioPinValue.High)
 	b1) turn green LED OFF
@@ -94,7 +94,7 @@ Code wait again 1 second and jumps to start.
             }
 ```
 
-# 2 Method to blink LEDs, using ternary condition
+# #2 Method to blink LEDs, using ternary condition
 
 First, we need to understand how ternary condition is working. Actually it is like IF-ELSE statement, but all in one line and using ? for IF and : for ELSE
 Lets go step-by-step
@@ -120,7 +120,7 @@ e) wait 1 second and start again
             }
 ```
 
-# 3 Method to blink LEDs, using plain code
+# #3 Method to blink LEDs, using plain code
 
 This method could be most easy to understand, but developers like it least.
 a) set green LED OFF
@@ -141,3 +141,7 @@ c) wait 1 second
                 Task.Delay(1000).Wait();
             }
 ```
+
+Which method to use, is depending on you and what is your coding level. If you are beginner, then most probably you will use method 3, if you have already some knowledge, you probably will use method 1. 
+Many skilled programmers would prefer method 2.
+I can say that there are other techniques exists as well, for example use methods, but we will keep it plain and simple at the moment.

@@ -68,21 +68,21 @@ The first row is init(); that is our previously created code-block for setting u
 ```
 
 # Three different methods to make LEDs blink
-Now we are ready to start alternatingly blink red and green LEDs
-while(true) tells to code, that "run forewer everything which inside of me".
+Now we are ready to have the red and Green LEDs blink alternatingly
+while(true) tells the code to "run everything inside of me forever".
 
-# #1 Method to blink LEDs, using IF-ELSE statement
+# #1 Method to blink LEDs, using an IF-ELSE statement
 
-1. check green LED status, is it on or off?
+1. check the status of the green LED, is it off or on?
 2. if green LED is ON (GpioPinValue.High)
 	1. turn green LED OFF
 	2. turn red LED ON
 3. jump over else and wait 1 second (1000 ms)
-4. start again checking green LED statuses
-5. now green LED is OFF, so code will jump to ELSE
+4. start again by checking the status of the green LED
+5. this time, green LED is OFF, and thus code will jump to ELSE
 	1. turn green LED ON
 	2. turn red LED OFF
-6. The code will wait again 1 second and then jumps to start.
+6. The code will wait again for 1 second and then jumps to start.
 
 ```c#
             while (true)
@@ -103,18 +103,18 @@ while(true) tells to code, that "run forewer everything which inside of me".
 
 # #2 Method to blink LEDs, using ternary condition
 
-First, we need to understand how ternary condition is working. Actually it is like IF-ELSE statement, but all in one line and using ? for IF and : for ELSE
+First, we need to understand how ternary condition works. It works like an IF-ELSE clause, but everything is in one line and uses a "?" for IF and a ":" for ELSE
 Lets go step-by-step
 
-1. creating variable to hold pin statuses (on or off) GpioPinValue pinValue
-	1. check green LED statuses (pinGreen.Read() == GpioPinValue.High)
-	2. if green LED is ON, then our variable pinValue will get a value GpioPinValue.Low 
-2. creating another variable to hold pin statuses (on or off) GpioPinValue pinValueRev
-	1. check pinValue statuses (pinValue == GpioPinValue.High)
-	2. if pinValue is LOW, then pinValueRev get a value GpioPinValue.High
-3. turn green LED on or off, based pinValue pinGreen.Write(pinValue);
-4. turn red LED on or off, based on pinValueRev pinRed.Write(pinValueRev);
-5. wait 1 second and start again
+1. create a variable to hold the status of a pin (on or off) GpioPinValue pinValue
+	1. check the status of the green LED (pinGreen.Read() == GpioPinValue.High)
+	2. if the green LED is ON, then our variable pinValue will get a value GpioPinValue.Low 
+2. create another variable to hold the inverted status of a pin (on or off) GpioPinValue pinValueRev
+	1. check the status of pinValue (pinValue == GpioPinValue.High)
+	2. if pinValue is LOW, then pinValueRev will be given a value of GpioPinValue.High
+3. turn the green LED off or on, based on pinValue pinGreen.Write(pinValue);
+4. turn the red LED off or on, based on pinValueRev pinRed.Write(pinValueRev);
+5. wait for 1 second and start again
 
 ```c#
             while (true)
@@ -129,13 +129,13 @@ Lets go step-by-step
 
 # #3 Method to blink LEDs, using plain code
 
-This method could be most easy to understand, but developers like it least.
+This method could be the easiest to understand, but developers like it the least.
 
-1. set green LED OFF
-2. set red LED ON
+1. set the green LED OFF
+2. set the red LED ON
 3. wait 1 second
-4. set green LED ON
-5. set red LED OFF
+4. set the green LED ON
+5. set the red LED OFF
 6. wait 1 second
 
 ```c#
@@ -151,9 +151,9 @@ This method could be most easy to understand, but developers like it least.
 ```
 
 # Which is the best method to use?
-It is always tricky question :)
+This is always a tricky question :)
 
-Which method to use, is depending on you and what is your coding level. If you are beginner, then most probably you will use method 3, if you have already some knowledge, you probably will use method 1. 
-Many skilled programmers would prefer method 2.
+Which method to use depends on you and your coding level. If you are a beginner, then you'll most probably use the third method, if you already have some knowledge, you will probably use the first methog. 
+Many skilled programmers however, prefer the second method.
 
-I can say that there are other techniques exists as well, for example use methods, but we will keep it plain and simple at the moment.
+There are of course many more ways to do this for example by using methods. For now however, I will keep it plain and simple.

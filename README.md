@@ -1,34 +1,34 @@
 # Lesson2 Hello Blinky Red and Green
-This project is using Raspberry PI, Windows 10 IoT Core and onboard red-green LEDs which are going to blink alternately.
+This project uses Raspberry PI, Windows 10 IoT Core and the onboard red-green LEDs which will be blinking alternatingly.
 
-Lesson #1 in this series are:https://github.com/LeivoSepp/Lesson1-HelloBlinky
+Lesson #1 in this series: https://github.com/LeivoSepp/Lesson1-HelloBlinky
 
 Lesson #3 in this series: https://github.com/LeivoSepp/Lesson3-HelloButton
 
-## Why is it worth to try this program?
+## Why use this program?
 
-1. You will learn, how to use method or we can say also "code block"
-2. You will learn, how to put your LEDs blinking with different style of coding
+1. You will learn how to use method, also known as "code block"
+2. You will learn how to make your LEDs bling using different styles of coding
 	1. Using IF-ELSE statement
 	2. Using ternary condition (?:)
 	3. using plain coding
 
-## Lets start from the beginning with the code explanation
-First, we will create variables to hold Red and Green LEDs pin numbers
+## Let's start by explaining the code from the start
+First, we will create variables to hold the Red and Green LED pin numbers
 ```c#
         int LED_PIN_GEEN = 47;
         int LED_PIN_RED = 35;
 ```
 
-Our program needs to know about pins to turn them on and off, so we will create variables for pin-objects which represent actual pins. 
+Our program needs to know about pins to turn them off and on, so we will create variables which will be representing actual pins. 
 We are setting later some parameters for them as well.
 ```c#
         GpioPin pinGreen;
         GpioPin pinRed;
 ```
 
-Here we are creating a method or let say small code block and we will name it "init".
-This code block will executed later, only one time in the beginning of the program.
+Here we'll create a method, also known as a code block and we'll be naming it "init".
+This code block will be executed for only once at the beginning of the program.
 ```c#
         private void init()
         {
@@ -39,18 +39,18 @@ This code block will executed later, only one time in the beginning of the progr
             pinGreen.SetDriveMode(GpioPinDriveMode.Output);
         }
 ```
-### What is inside of this init code-block?
+### What is in this init code-block?
 
 First we will create a gpio controller to let our code know all about the pins.
 ```c#
             var gpio = GpioController.GetDefault();
 ```
 
-Here we actually set the parameters for our previously created pins.
+Then we will set the parameters for our previously created pins.
 Our program need to know two things:
 
 1. what is the pin number? "your pin number is 35"
-2. is that pin input or output? "this pin is output"
+2. is the pin an input or an output? "this pin is an output"
 
 ```c#
             pinGreen = gpio.OpenPin(LED_PIN_GEEN);
@@ -59,7 +59,7 @@ Our program need to know two things:
             pinGreen.SetDriveMode(GpioPinDriveMode.Output);
 ```
 
-Actual execute of the code will start here, with the method "Run"
+Actual execution of the code will start here, with the method "Run"
 The first row is init(); that is our previously created code-block for setting up pins.
 ```c#
         public void Run(IBackgroundTaskInstance taskInstance)
@@ -67,8 +67,8 @@ The first row is init(); that is our previously created code-block for setting u
             init();
 ```
 
-# Three different methods to blink LEDs
-Now we are ready to start alternatevly blink red and green LEDs
+# Three different methods to make LEDs blink
+Now we are ready to start alternatingly blink red and green LEDs
 while(true) tells to code, that "run forewer everything which inside of me".
 
 # #1 Method to blink LEDs, using IF-ELSE statement

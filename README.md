@@ -82,8 +82,8 @@ while(true) tells to code, that "run forewer everything which inside of me".
 5. now green LED is OFF, so code will jump to ELSE
 	1. turn green LED ON
 	2. turn red LED OFF
+6. The code will wait again 1 second and then jumps to start.
 
-Code wait again 1 second and jumps to start.
 ```c#
             while (true)
             {

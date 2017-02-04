@@ -142,6 +142,8 @@ c) wait 1 second
             }
 ```
 
+# Which is the best method to use?
+It is always tricky question :)
 Which method to use, is depending on you and what is your coding level. If you are beginner, then most probably you will use method 3, if you have already some knowledge, you probably will use method 1. 
 Many skilled programmers would prefer method 2.
 I can say that there are other techniques exists as well, for example use methods, but we will keep it plain and simple at the moment.

@@ -1,14 +1,19 @@
 # Lesson2 Hello Blinky Red and Green
 This project is using Raspberry PI, Windows 10 IoT Core and onboard red-green LEDs which are going to blink alternately.
 
-# Why is it worth to try this program?
+Lesson #1 in this series are:https://github.com/LeivoSepp/Lesson1-HelloBlinky
+
+Lesson #3 in this series: https://github.com/LeivoSepp/Lesson3-HelloButton
+
+## Why is it worth to try this program?
+
 1. You will learn, how to use method or we can say also "code block"
 2. You will learn, how to put your LEDs blinking with different style of coding
-	a) Using IF-ELSE statement
-	b) Using ternary condition (?:)
-	c) using plain coding
+	1. Using IF-ELSE statement
+	2. Using ternary condition (?:)
+	3. using plain coding
 
-# Lets start from the beginning with the code explanation
+## Lets start from the beginning with the code explanation
 First, we will create variables to hold Red and Green LEDs pin numbers
 ```c#
         int LED_PIN_GEEN = 47;
@@ -34,15 +39,16 @@ This code block will executed later, only one time in the beginning of the progr
             pinGreen.SetDriveMode(GpioPinDriveMode.Output);
         }
 ```
-What is inside of this init code-block?
+### What is inside of this init code-block?
 
-First we will create a gpio-object and checking is it successful or not.
+First we will create a gpio controller to let our code know all about the pins.
 ```c#
             var gpio = GpioController.GetDefault();
 ```
 
 Here we actually set the parameters for our previously created pins.
 Our program need to know two things:
+
 1. what is the pin number? "your pin number is 35"
 2. is that pin input or output? "this pin is output"
 
@@ -54,7 +60,7 @@ Our program need to know two things:
 ```
 
 Actual execute of the code will start here, with the method "Run"
-The first row is init(); that is our previously created code-block for setting up pins
+The first row is init(); that is our previously created code-block for setting up pins.
 ```c#
         public void Run(IBackgroundTaskInstance taskInstance)
         {

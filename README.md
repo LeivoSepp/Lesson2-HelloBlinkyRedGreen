@@ -24,7 +24,7 @@ Our program needs to know about pins to turn them off and on, so we will create 
 We are setting later some parameters for them as well.
 ```c#
         GpioPin pinGreen;
-G        GpioPin pinRed;
+        GpioPin pinRed;
 ```
 
 Here we'll create a method, also known as a code block and we'll be naming it "init".

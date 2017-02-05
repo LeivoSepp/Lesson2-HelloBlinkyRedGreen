@@ -4,7 +4,7 @@ This project uses Raspberry PI, Windows 10 IoT Core and the onboard red-green LE
 * Lesson #1 in this series: https://github.com/LeivoSepp/Lesson1-HelloBlinky
 * Lesson #3 in this series: https://github.com/LeivoSepp/Lesson3-HelloButton
 
-## Why use this program?
+## Why try this program?
 
 1. You will learn how to use method, also known as "code block"
 2. You will learn how to make your LEDs bling using different styles of coding
